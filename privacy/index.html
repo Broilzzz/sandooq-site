@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy · Sandooq</title>
+  <meta name="description" content="What Sandooq holds about you, what it can't read because it's end-to-end encrypted, who helps run it, and how to delete your data.">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="../" aria-label="Sandooq home">sandoo<svg class="q" viewBox="0 0 26 36" aria-hidden="true"><circle class="mark" cx="12.5" cy="12.5" r="12.5"/><rect class="mark" x="18" y="5" width="7" height="31" rx="2"/><circle class="hole" cx="12.5" cy="10" r="4"/><rect class="hole" x="11" y="11" width="3" height="9" rx="1.5"/></svg></a>
+      <nav aria-label="Main">
+        <a href="../privacy/" aria-current="page">Privacy</a>
+        <a href="../terms/">Terms</a>
+        <a href="../delete-account/">Delete account</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap narrow">
+    <div class="doc-head">
+      <h1>Privacy policy</h1>
+      <p class="updated">Last updated 16 November 2026 · Effective 11 November 2026</p>
+    </div>
+
+    <div class="summary">
+      <h2>The short version</h2>
+      <ul>
+        <li>Your documents, their details and your vault names are <strong>encrypted on your phone</strong> before they reach our servers. We can't read them, and neither can anyone who breaks into our servers.</li>
+        <li>We do hold your <strong>Google email and name</strong>, which vaults you're in, and counts, sizes and times, because the app can't work without them.</li>
+        <li>Reading documents (text recognition) and search happen <strong>on your phone</strong>. Nothing you look for is sent to us.</li>
+        <li>No ads, no tracking, no analytics, and we never sell or share your data.</li>
+        <li>You can <a href="../delete-account/">delete your account</a> from the app at any time.</li>
+      </ul>
+    </div>
+
+    <nav class="toc" aria-label="Contents">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#encryption">How the encryption works</a></li>
+        <li><a href="#server">What our servers hold</a></li>
+        <li><a href="#phone">What stays on your phone</a></li>
+        <li><a href="#members">What other members see</a></li>
+        <li><a href="#providers">Services that help run Sandooq</a></li>
+        <li><a href="#voice">Voice search</a></li>
+        <li><a href="#leaving">Files you send out of the app</a></li>
+        <li><a href="#permissions">Phone permissions</a></li>
+        <li><a href="#dont">What we don't do</a></li>
+        <li><a href="#retention">How long we keep data</a></li>
+        <li><a href="#delete">Deleting your data</a></li>
+        <li><a href="#security">Security and your recovery key</a></li>
+        <li><a href="#payments">Payments</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#transfers">Where data is stored</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact and grievances</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h2 id="who">1. Who we are</h2>
+      <p>Sandooq is a family document vault app made by <strong>Ahil Ahmed</strong>, an individual developer based in Mangalore, Karnataka, India ("we", "us"). We decide how the data described here is used, and we're the person to contact about it (see <a href="#contact">Contact</a>).</p>
+      <p>This policy covers the Sandooq app for Android and the servers it talks to. This website sets no cookies and has no analytics; your browser loads its font from Google Fonts.</p>
+
+      <h2 id="encryption">2. How the encryption works</h2>
+      <p>When you sign in, your phone makes your own pair of keys. The private one stays in your phone's secure key storage. Each vault gets its own random key, made on the phone that creates the vault, and that key is shared only by locking a copy of it to each member's public key. Every file has its own key too, locked by the vault key.</p>
+      <p>Your documents, their titles, the person they belong to, their type, numbers, expiry dates, the text read from them, file names and vault names are all encrypted with these keys <strong>before they leave your phone</strong>. Our servers only ever receive the locked result, and they never hold a key that could open it. The encryption uses the widely reviewed libsodium library.</p>
+      <p class="muted">Signing in with Google only proves who you are. It never creates, holds or unlocks a key.</p>
+
+      <h2 id="server">3. What our servers hold</h2>
+      <div class="table-card">
+        <table>
+          <thead><tr><th>Data</th><th>Can we read it?</th><th>Why we need it</th></tr></thead>
+          <tbody>
+            <tr><td>Your Google sign-in: email address, name, profile picture link and Google account ID</td><td><span class="pill plain">Readable</span></td><td>To sign you in, and so the people you share a vault with know it's you.</td></tr>
+            <tr><td>The display name you choose</td><td><span class="pill plain">Readable</span></td><td>Shown to members of your vaults.</td></tr>
+            <tr><td>Sign-in sessions: when you signed in, and the IP address and app/device description your phone sent</td><td><span class="pill plain">Readable</span></td><td>Kept by the sign-in service to keep you signed in and to stop misuse.</td></tr>
+            <tr><td>Your public keys and their security code</td><td><span class="pill plain">Readable</span></td><td>So others can share a vault with you and check it's really you. Public keys can't decrypt anything.</td></tr>
+            <tr><td>A backup of your private key</td><td><span class="pill enc">Encrypted</span></td><td>Locked with your recovery key, which we never see. Lets you get back in on a new phone.</td></tr>
+            <tr><td>Vault membership: which vaults you're in, your role, invites (stored only as a scrambled one-way code) and join requests</td><td><span class="pill plain">Readable</span></td><td>To decide who may see, add, change or delete what.</td></tr>
+            <tr><td>Vault names, documents, records, file names, and everything read from them</td><td><span class="pill enc">Encrypted</span></td><td>To keep them safe and in sync across the family's phones.</td></tr>
+            <tr><td>Files (scans, photos, PDFs)</td><td><span class="pill enc">Encrypted</span></td><td>Stored as encrypted bytes, fetched only when a member opens them.</td></tr>
+            <tr><td>Counts, file sizes, and when items were added, changed or deleted</td><td><span class="pill plain">Readable</span></td><td>For syncing, the storage limits, and keeping the service running.</td></tr>
+            <tr><td>Who added, last changed or deleted an item (as an account, never what was changed)</td><td><span class="pill plain">Readable</span></td><td>So members can see who did what, and so it can't be faked by another phone.</td></tr>
+            <tr><td>Daily service health totals (for example, the number of accounts and total storage)</td><td><span class="pill plain">Totals only</span></td><td>To spot problems. They never contain names, emails, IDs or vault content.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Our legal basis is your consent when you create an account, and what's necessary to provide the app you asked for. You can withdraw consent at any time by deleting your account.</p>
+
+      <h2 id="phone">4. What stays on your phone</h2>
+      <p>Some things never leave your phone at all, not even encrypted:</p>
+      <ul>
+        <li>Pictures used as previews of your documents.</li>
+        <li>The original, uncompressed file when Sandooq stores a smaller copy.</li>
+        <li>What you type or say into search.</li>
+        <li>Your settings: language, theme and app lock.</li>
+      </ul>
+      <p>Everything Sandooq keeps on your phone is in an encrypted database or encrypted files. Decrypted documents are only held in memory, or in short-lived files that are wiped after use.</p>
+
+      <h2 id="members">5. What other members of your vaults see</h2>
+      <p>The people in a vault with you can see your display name, Google name, email address, role and security code, and which items you added, changed or deleted. Because they hold the vault's key, they can open its documents, including the ones you added, and they can save copies or send them out of the app. Only invite people you trust.</p>
+      <p>An invite link or QR code only creates a request to join. Nobody gets in until an owner or admin lets them in from a phone that holds the vault's key.</p>
+
+      <h2 id="providers">6. Services that help run Sandooq</h2>
+      <p>These companies process data for us, only to run the app. None of them can read your encrypted documents.</p>
+      <div class="table-card">
+        <table>
+          <thead><tr><th>Service</th><th>What it does</th><th>What it handles</th></tr></thead>
+          <tbody>
+            <tr><td>Supabase</td><td>Database, sign-in and API. Servers in Mumbai, India.</td><td>Everything in <a href="#server">section 3</a> except file bytes.</td></tr>
+            <tr><td>Cloudflare (R2)</td><td>File storage and our database backups. Asia-Pacific region.</td><td>Encrypted files only, and encrypted backups (see <a href="#retention">retention</a>).</td></tr>
+            <tr><td>GitHub (Microsoft)</td><td>Runs the job that makes our database backups.</td><td>The backup is made and encrypted on GitHub's servers before it's stored. Vault content in it is still encrypted with keys no backup holds.</td></tr>
+            <tr><td>Google</td><td>Google sign-in; the document scanner and text recognition (ML Kit, which runs on your phone); Android's Block Store, which keeps a copy of your private key that only your phone's screen lock can unlock.</td><td>Your sign-in details. Google may collect basic usage and device information from these services under its own policy.</td></tr>
+            <tr><td>Hugging Face</td><td>One-time download of the optional on-device reading model, over Wi-Fi.</td><td>Your IP address, as with any download. Nothing about you or your documents.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We don't use any advertising, analytics or crash-reporting service. If we ever add crash reports, they will never contain your keys or document content, and we'll update this policy first.</p>
+
+      <h2 id="voice">7. Voice search</h2>
+      <p>Voice search uses your phone's own speech recognition service (on most Android phones, Google's). What you say is turned into text by that service under its own privacy policy, and depending on your phone and language it may be processed on Google's servers. Sandooq only receives the text, matches it against your documents on the phone, and doesn't save it or send it to us. The microphone is only used while voice search is listening.</p>
+
+      <h2 id="leaving">8. Files you send out of the app</h2>
+      <p>When you choose to send or export a document (for example to WhatsApp, or to a website's upload button), that copy leaves Sandooq <strong>unencrypted</strong>, and what happens to it is covered by the receiving app's or website's policy. Sandooq never does this by itself; it always takes your tap and confirmation.</p>
+
+      <h2 id="permissions">9. Phone permissions</h2>
+      <ul>
+        <li><strong>Camera:</strong> to scan documents and invite QR codes.</li>
+        <li><strong>Microphone:</strong> only while voice search is listening.</li>
+        <li><strong>Fingerprint, face or screen lock:</strong> for the optional app lock and to confirm sensitive steps. This is checked by your phone; nothing about it reaches us.</li>
+        <li><strong>Internet and network state:</strong> to sync, and to download the reading model only on Wi-Fi.</li>
+      </ul>
+
+      <h2 id="dont">10. What we don't do</h2>
+      <ul>
+        <li>We don't show ads, and we don't sell, rent or share your data with anyone for their own use.</li>
+        <li>We don't track you across apps or websites, and we don't profile you.</li>
+        <li>We don't send your documents or their text to any cloud reading or AI service.</li>
+        <li>We don't merge accounts automatically based on email address.</li>
+      </ul>
+      <p>We will only disclose data if the law requires it. Even then we can only hand over what's readable in <a href="#server">section 3</a>; we can't decrypt vault content.</p>
+
+      <h2 id="retention">11. How long we keep data</h2>
+      <ul>
+        <li><strong>Your account and vaults:</strong> until you delete them.</li>
+        <li><strong>Deleted documents and files:</strong> kept in the vault's Trash for 30 days so they can be restored, then removed for good. Emptying the Trash removes them sooner.</li>
+        <li><strong>Encrypted database backups:</strong> made twice a month and kept for about 30 days (at most 32), then deleted automatically. Deleted data and deleted accounts can stay in a backup until it expires.</li>
+        <li><strong>Service health totals:</strong> 120 days.</li>
+        <li><strong>Records of deleted accounts:</strong> after an account is deleted we keep a note of its random account ID and the deletion time (no email or name) for as long as our backups last, so the deletion can be repeated if we ever have to restore from a backup.</li>
+        <li><strong>Technical server logs</strong> kept by our providers: a few days.</li>
+      </ul>
+
+      <h2 id="delete">12. Deleting your data</h2>
+      <p>You can delete single documents, files and vaults in the app. To delete your whole account, go to <strong>Profile → Delete account</strong>, or follow the steps on our <a href="../delete-account/">account deletion page</a> if you can't use the app. Vaults only you are in are deleted with everything in them. In vaults shared with others, what you added stays for the other members, you're removed, and the vault gets a new key.</p>
+
+      <h2 id="security">13. Security and your recovery key</h2>
+      <p>Besides end-to-end encryption, every request to our servers checks your session and your role in the vault, file links expire within minutes, and backups are encrypted before they're stored. The data on your phone is in an encrypted database.</p>
+      <p>When you set up Sandooq you get a <strong>recovery key</strong>. We never see it. Keep it somewhere safe: anyone who has it <em>and</em> your Google account could restore your keys, and if you lose your phone without the recovery key, your phone's backup or another vault member, a vault only you were in can't be opened again, by anyone, including us.</p>
+      <p>If we learn of a breach affecting your personal data, we'll tell you and the authorities as the law requires.</p>
+
+      <h2 id="payments">14. Payments</h2>
+      <p>Sandooq is free for now. If we offer paid plans, payment will go through Google Play. We would receive your plan and its status, never your card or bank details.</p>
+
+      <h2 id="children">15. Children</h2>
+      <p>Sandooq accounts are for adults (18 or older). Parents and guardians may keep their children's documents in their own vaults. If you think a child has made an account, contact us and we'll delete it.</p>
+
+      <h2 id="rights">16. Your rights</h2>
+      <p>Depending on where you live, including under India's Digital Personal Data Protection Act, 2023, the UAE's and Saudi Arabia's personal data protection laws, and the GDPR, you can:</p>
+      <ul>
+        <li>ask what personal data we hold about you and get a copy;</li>
+        <li>correct it (you can change your display name in the app at any time);</li>
+        <li>delete it, or withdraw your consent, by deleting your account;</li>
+        <li>nominate someone to act for you if you die or can't act yourself;</li>
+        <li>complain to us, and then to your data protection authority (in India, the Data Protection Board of India).</li>
+      </ul>
+      <p>Email us from the address you sign in with and we'll reply within 30 days. We can't export or read your encrypted vault content for you; use the app's export or send options to get copies of your documents.</p>
+
+      <h2 id="transfers">17. Where data is stored</h2>
+      <p>Our database is in Mumbai, India, and encrypted files and backups are in Cloudflare's Asia-Pacific region. The backup job runs on GitHub's servers, which may be outside India (usually in the USA), and Google's services may process data in other countries. By using Sandooq you agree to these transfers, which are protected by the measures described in this policy.</p>
+
+      <h2 id="changes">18. Changes to this policy</h2>
+      <p>When we change this policy we'll update the date at the top. For important changes we'll also tell you in the app before they take effect.</p>
+
+      <h2 id="contact">19. Contact and grievances</h2>
+      <div class="mail-card">
+        <dl>
+          <dt>Name</dt><dd>Ahil Ahmed (also our grievance officer)</dd>
+          <dt>Email</dt><dd><a href="mailto:ahilahmedhussain15@gmail.com">ahilahmedhussain15@gmail.com</a></dd>
+          <dt>Location</dt><dd>Mangalore, Karnataka, India</dd>
+        </dl>
+      </div>
+      <p>We reply to privacy questions and complaints within 30 days.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Ahil Ahmed · Mangalore, India</span>
+      <nav aria-label="Footer">
+        <a href="../privacy/">Privacy policy</a>
+        <a href="../terms/">Terms of service</a>
+        <a href="../delete-account/">Delete your account</a>
+        <a href="mailto:ahilahmedhussain15@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
