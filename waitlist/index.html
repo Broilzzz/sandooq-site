@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the waitlist · Sandooq</title>
+  <meta name="description" content="Sandooq is coming soon to Android. Leave your email and we'll tell you the day it's out, or invite you to try it early.">
+  <meta property="og:title" content="Sandooq is coming soon. Join the waitlist.">
+  <meta property="og:description" content="Your family's passports, IDs and papers, end-to-end encrypted and found by voice in your own language.">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="../" aria-label="Sandooq home">sandoo<svg class="q" viewBox="0 0 26 36" aria-hidden="true"><circle class="mark" cx="12.5" cy="12.5" r="12.5"/><rect class="mark" x="18" y="5" width="7" height="31" rx="2"/><circle class="hole" cx="12.5" cy="10" r="4"/><rect class="hole" x="11" y="11" width="3" height="9" rx="1.5"/></svg></a>
+      <nav aria-label="Main">
+        <a class="nav-cta" href="../waitlist/" aria-current="page">Waitlist</a>
+        <a href="../privacy/">Privacy</a>
+        <a href="../terms/">Terms</a>
+        <a href="../delete-account/">Delete account</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap narrow">
+    <div class="doc-head">
+      <span class="eyebrow">Coming soon on Android</span>
+      <h1>Be first to get Sandooq</h1>
+      <p class="lead">Leave your email and we'll tell you the day it's on Google Play. Want it sooner? Tick the box to try it before everyone else.</p>
+    </div>
+
+    <form id="waitlist" class="form-card" novalidate>
+      <div class="field">
+        <label for="email">Email <span class="req">required</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required placeholder="you@gmail.com">
+        <p class="hint" id="email-hint">If you'd like to test early, use the Google account you use for Play Store.</p>
+        <p class="error" id="email-error" hidden>Please enter a valid email address.</p>
+      </div>
+
+      <div class="field">
+        <label for="name">Your name <span class="opt">optional</span></label>
+        <input id="name" name="name" type="text" autocomplete="name" maxlength="80">
+      </div>
+
+      <fieldset class="field">
+        <legend>Your phone</legend>
+        <div class="seg">
+          <label><input type="radio" name="phone" value="android" checked><span>Android</span></label>
+          <label><input type="radio" name="phone" value="iphone"><span>iPhone</span></label>
+        </div>
+        <p class="hint" id="iphone-note" hidden>Android comes first. We'll email you when the iPhone app is ready too.</p>
+      </fieldset>
+
+      <div class="row2">
+        <div class="field">
+          <label for="country">Where you live</label>
+          <select id="country" name="country">
+            <option value="">Choose…</option>
+            <option value="india">India</option>
+            <option value="uae">UAE</option>
+            <option value="saudi">Saudi Arabia</option>
+            <option value="qatar">Qatar</option>
+            <option value="kuwait">Kuwait</option>
+            <option value="oman">Oman</option>
+            <option value="bahrain">Bahrain</option>
+            <option value="other">Somewhere else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="language">App language</label>
+          <select id="language" name="language">
+            <option value="">Choose…</option>
+            <option value="en">English</option>
+            <option value="ml" lang="ml">മലയാളം (Malayalam)</option>
+            <option value="kn" lang="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="ta" lang="ta">தமிழ் (Tamil)</option>
+            <option value="hi" lang="hi">हिन्दी (Hindi)</option>
+            <option value="ar" lang="ar">العربية (Arabic)</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="field">
+        <legend>What would you keep in it? <span class="opt">pick any</span></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="docs" value="passports"><span>Passports</span></label>
+          <label><input type="checkbox" name="docs" value="aadhaar_pan"><span>Aadhaar / PAN</span></label>
+          <label><input type="checkbox" name="docs" value="gulf_id"><span>Emirates ID / Iqama</span></label>
+          <label><input type="checkbox" name="docs" value="certificates"><span>Birth, marriage, school certificates</span></label>
+          <label><input type="checkbox" name="docs" value="property_vehicle"><span>Property &amp; vehicle papers</span></label>
+          <label><input type="checkbox" name="docs" value="medical"><span>Medical records</span></label>
+          <label><input type="checkbox" name="docs" value="insurance_bank"><span>Insurance &amp; bank papers</span></label>
+          <label><input type="checkbox" name="docs" value="passwords"><span>Passwords &amp; PINs</span></label>
+        </div>
+      </fieldset>
+
+      <label class="check" id="tester-row">
+        <input type="checkbox" name="tester" value="yes">
+        <span><strong>I'd like to test it early.</strong> We'll invite you to the Play Store test before launch. It's free, and you can leave any time.</span>
+      </label>
+
+      <!-- Bots fill this in; people never see it. -->
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this empty</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button class="btn submit" type="submit"><span class="label">Join the waitlist</span><span class="spinner" aria-hidden="true"></span></button>
+      <p class="fine">We'll only email you about Sandooq's launch (and the test, if you ticked it), never ads or anything else. To be removed, reply to any email or <a href="mailto:ahilahmedhussain15@gmail.com?subject=Remove%20me%20from%20the%20Sandooq%20waitlist">write to us</a>. See <a href="../privacy/#waitlist">how we handle it</a>.</p>
+      <p class="error form-error" id="form-error" role="alert" hidden></p>
+    </form>
+
+    <section class="form-card done" id="done" hidden tabindex="-1" aria-live="polite">
+      <div class="done-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h2>You're on the list</h2>
+      <p id="done-text">We'll email you the day Sandooq is on Google Play.</p>
+      <p class="done-sub">Know someone juggling the family's papers? Send them the link.</p>
+      <div class="cta-row">
+        <a class="btn" id="share-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <button class="btn ghost" type="button" id="share-copy">Copy link</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Ahil Ahmed · Mangalore, India</span>
+      <nav aria-label="Footer">
+        <a href="../privacy/">Privacy policy</a>
+        <a href="../terms/">Terms of service</a>
+        <a href="../delete-account/">Delete your account</a>
+        <a href="mailto:ahilahmedhussain15@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="waitlist.js" defer></script>
+</body>
+</html>
