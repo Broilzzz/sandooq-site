@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sandooq — your family's documents, locked and close at hand</title>
   <meta name="description" content="Sandooq keeps your family's passports, IDs and papers end-to-end encrypted, shared with the people you choose, and found by voice in your own language.">
+  <meta property="og:title" content="Sandooq — your family's documents, locked and close at hand">
+  <meta property="og:description" content="End-to-end encrypted family document vault. Read on your phone, found by voice, shared only with family.">
   <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,12 +14,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="q" viewBox="0 0 26 36"><circle cx="12.5" cy="12.5" r="12.5" style="fill:var(--q-mark)"/><rect x="18" y="5" width="7" height="31" rx="2" style="fill:var(--q-mark)"/><circle cx="12.5" cy="10" r="4" style="fill:var(--q-hole)"/><rect x="11" y="11" width="3" height="9" rx="1.5" style="fill:var(--q-hole)"/></symbol>
+  </svg>
+
   <header class="site-header">
     <div class="wrap">
       <a class="wordmark" href="./" aria-label="Sandooq home">sandoo<svg class="q" viewBox="0 0 26 36" aria-hidden="true"><circle class="mark" cx="12.5" cy="12.5" r="12.5"/><rect class="mark" x="18" y="5" width="7" height="31" rx="2"/><circle class="hole" cx="12.5" cy="10" r="4"/><rect class="hole" x="11" y="11" width="3" height="9" rx="1.5"/></svg></a>
       <nav aria-label="Main">
+        <a class="nav-sec" href="#security">Security</a>
         <a href="privacy/">Privacy</a>
         <a href="terms/">Terms</a>
         <a href="delete-account/">Delete account</a>
@@ -26,109 +35,312 @@
   </header>
 
   <main>
-    <div class="wrap">
-      <section class="hero">
+    <!-- Hero -->
+    <section class="hero2">
+      <div class="wrap">
         <div>
           <span class="eyebrow">Sandooq · صندوق · the family box</span>
-          <h1>Your family's documents. <em>Locked</em> and close at hand.</h1>
+          <h1>Your family's documents, <span class="lock-word">locked</span> and close at hand.</h1>
           <p class="lede">Passports, Aadhaar, Emirates ID, Iqama, certificates. Keep them in one vault, share it with the people you trust, and find any of them by saying its name. Everything is encrypted on your phone, so not even we can open it.</p>
           <div class="cta-row">
-            <a class="btn" href="#how">How it keeps them safe</a>
-            <span class="soon">Coming soon on Google Play</span>
+            <a class="btn" href="#how">See how it works</a>
+            <a class="btn ghost" href="#security">What we can see</a>
+          </div>
+          <div class="hero-meta">
+            <span><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>End-to-end encrypted</span>
+            <span><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>No ads, no tracking</span>
+            <span><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg>Coming soon on Android</span>
           </div>
         </div>
-        <div class="vault-stage" aria-hidden="true">
-          <div class="stack">
-            <div class="vault behind">
-              <div class="row"><div class="lock"></div></div>
-              <div><h3>Parents</h3></div>
-            </div>
-            <div class="vault">
-              <div class="row">
-                <div class="lock"><svg viewBox="0 0 26 36"><circle cx="12.5" cy="12.5" r="12.5" fill="#fff"/><rect x="18" y="5" width="7" height="31" rx="2" fill="#fff"/><circle cx="12.5" cy="10" r="4" style="fill:var(--brand)"/><rect x="11" y="11" width="3" height="9" rx="1.5" style="fill:var(--brand)"/></svg></div>
-                <div class="people"><span>A</span><span>R</span><span>F</span><span>+2</span></div>
-              </div>
-              <div>
-                <h3>Family</h3>
-                <div class="meta">42 items · 5 people</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="block">
-        <h2>Say it, find it, send it.</h2>
-        <p class="section-sub">Made for families who keep papers for two countries and three generations.</p>
-        <div class="grid">
-          <div class="card">
-            <div class="icon"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
-            <h3>Find by voice</h3>
-            <p>Say "Amma's passport" in Malayalam, Tamil, Hindi, Kannada, Arabic or English, and it opens.</p>
+        <div class="scene">
+          <p class="sr-only">An animation: a passport is scanned, its details are read on the phone, encrypted, and locked inside the family vault.</p>
+          <div class="scene-box" aria-hidden="true">
+            <div class="stage" id="stage">
+              <div class="safe">
+                <span class="rivet tl"></span><span class="rivet tr"></span><span class="rivet bl"></span><span class="rivet br"></span>
+                <span class="foot l"></span><span class="foot r"></span>
+                <div class="interior" id="interior"></div>
+              </div>
+
+              <div class="doc" id="doc">
+                <div class="doc-head"><span id="doc-type">PASSPORT</span><em id="doc-tag">IND</em></div>
+                <div class="doc-body">
+                  <div class="doc-photo"><span class="noise"></span></div>
+                  <div class="doc-fields">
+                    <div><small id="l0">Name</small><b id="f0">Amma K.</b></div>
+                    <div><small id="l1">Number</small><b id="f1">P 4821907</b></div>
+                    <div><small id="l2">Expires</small><b id="f2">12 Apr 2031</b></div>
+                  </div>
+                </div>
+                <span class="scanline"></span>
+                <span class="doc-lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+              </div>
+
+              <div class="door" id="door">
+                <div class="door-face">
+                  <span class="hinge a"></span><span class="hinge b"></span>
+                  <span class="bolt r1"></span><span class="bolt r2"></span>
+                  <span class="door-plate"><span class="led" id="led"></span>FAMILY</span>
+                  <div class="dial-wrap">
+                    <span class="dial-ticks"></span>
+                    <div class="dial" id="dial"><svg><use href="#q"/></svg></div>
+                    <span class="dial-glow" id="glow"></span>
+                  </div>
+                </div>
+                <div class="door-back"></div>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M8 9h8M8 12h8M8 15h5"/></svg></div>
-            <h3>Reads them for you</h3>
-            <p>Scan a card and Sandooq fills in the type, name, number and expiry. The reading happens on your phone, never in the cloud.</p>
+          <ol class="scene-steps" id="steps" aria-hidden="true">
+            <li>Scan</li><li>Read on phone</li><li>Encrypt</li><li>Lock away</li>
+          </ol>
+          <p class="scene-line" id="scene-line" aria-hidden="true">&nbsp;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust">
+      <div class="wrap">
+        <ul>
+          <li class="reveal"><span class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>Encrypted before it leaves your phone</li>
+          <li class="reveal" style="--delay:.06s"><span class="icon"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M9 8h6M9 11h6M9 14h3"/></svg></span>Documents are read on the phone, never in the cloud</li>
+          <li class="reveal" style="--delay:.12s"><span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>No ads, no analytics, nothing sold</li>
+          <li class="reveal" style="--delay:.18s"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Database in Mumbai, India</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="sec" id="how">
+      <div class="wrap">
+        <span class="kicker reveal">How it works</span>
+        <h2 class="reveal">From a photo to a locked vault in under a minute.</h2>
+        <p class="sub reveal">Sandooq does the filing for you, and every step that touches what's on your documents happens on your own phone.</p>
+        <div class="how">
+          <div class="card reveal">
+            <span class="num">01</span>
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><rect x="8" y="8" width="8" height="8" rx="1.5"/></svg></div>
+            <h3>Scan or import</h3>
+            <p>Use the camera's document scanner, or pick a PDF or photo. Big files are shrunk on the phone; the original stays with you.</p>
           </div>
-          <div class="card">
+          <div class="card reveal" style="--delay:.08s">
+            <span class="num">02</span>
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 9h8M8 12h8M8 15h5"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg></div>
+            <h3>Read on your phone</h3>
+            <p>It recognises passports, Aadhaar, PAN, Emirates ID and Iqama, and fills in whose it is, the number and the expiry. No cloud AI ever sees it.</p>
+          </div>
+          <div class="card reveal" style="--delay:.16s">
+            <span class="num">03</span>
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></svg></div>
+            <h3>Encrypted with the vault key</h3>
+            <p>The file, its title, the number and the text read from it are encrypted before upload. Every file even gets a key of its own.</p>
+          </div>
+          <div class="card reveal" style="--delay:.24s">
+            <span class="num">04</span>
             <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.5a3 3 0 0 1 0 5.8M17.5 14.5A5 5 0 0 1 21 19"/></svg></div>
-            <h3>Shared with family</h3>
-            <p>Invite people by QR code or WhatsApp. Owners, admins, editors and viewers each get the right amount of access.</p>
+            <h3>There for the whole family</h3>
+            <p>It syncs to every member's phone, opens offline once viewed, and goes to WhatsApp in two taps when an office asks for a copy.</p>
           </div>
-          <div class="card">
+        </div>
+      </div>
+    </section>
+
+    <!-- What we can see -->
+    <section class="sec" id="security">
+      <div class="wrap compare">
+        <div>
+          <span class="kicker reveal">End-to-end encrypted</span>
+          <h2 class="reveal">We can't read your documents. Here's the proof.</h2>
+          <p class="sub reveal" style="margin-bottom:22px">Flip between what your family sees and what actually reaches our server. Only a few details are left readable, because the app can't work without them, and we tell you which.</p>
+          <ul class="compare-notes reveal">
+            <li>The vault key is made on the phone that creates the vault, and is only ever shared sealed to each member's own key.</li>
+            <li>A server break-in, a leaked backup or a curious engineer would find only locked boxes.</li>
+            <li class="p">Readable to us: your Google email and name, who's in which vault, and counts, sizes and times. <a href="privacy/#server">The full list</a>.</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="seg" role="group" aria-label="Choose a view">
+            <button type="button" id="v-phone" aria-pressed="true"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg>On your phone</button>
+            <button type="button" id="v-server" aria-pressed="false"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>On our server</button>
+          </div>
+          <div class="view-card" id="view" aria-live="polite">
+            <div class="view-top">
+              <div class="view-thumb"><span class="noise"></span></div>
+              <div style="min-width:0;flex:1">
+                <div class="view-title" data-plain="Ravi · Aadhaar">Ravi · Aadhaar</div>
+              </div>
+              <span class="tag e">Encrypted</span>
+            </div>
+            <div class="view-row"><span class="k">Whose</span><span class="v" data-plain="Ravi Menon">Ravi Menon</span><span class="tag e">Encrypted</span></div>
+            <div class="view-row"><span class="k">Type</span><span class="v" data-plain="Aadhaar card">Aadhaar card</span><span class="tag e">Encrypted</span></div>
+            <div class="view-row"><span class="k">Number</span><span class="v" data-plain="4821 9073 5512">4821 9073 5512</span><span class="tag e">Encrypted</span></div>
+            <div class="view-row"><span class="k">Text read</span><span class="v" data-plain="Government of India · Ravi Menon · DOB 04/06/1987">Government of India · Ravi Menon · DOB 04/06/1987</span><span class="tag e">Encrypted</span></div>
+            <div class="view-row"><span class="k">Vault</span><span class="v" data-plain="Family">Family</span><span class="tag e">Encrypted</span></div>
+            <div class="view-row"><span class="k">Size, added</span><span class="v">412 KB · 12 Nov 2026</span><span class="tag p">Readable</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voice + features -->
+    <section class="sec">
+      <div class="wrap">
+        <span class="kicker reveal">Say it, find it, send it</span>
+        <h2 class="reveal">Made for families who keep papers for two countries and three generations.</h2>
+        <p class="sub reveal">Ask in the language you think in. The whole app speaks English, Malayalam, Tamil, Hindi, Kannada and Arabic.</p>
+        <div class="bento">
+          <div class="card voice reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+            <h3>Find anything by voice</h3>
+            <p>Say whose it is and what it is. Sandooq searches the names, types and the text read from every document on your phone.</p>
+            <div class="voice-demo" id="voice" aria-hidden="true">
+              <span class="lang-chip" id="v-lang">മലയാളം</span>
+              <div class="mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+              <div class="said" id="v-said"></div>
+              <div class="found" id="v-found">
+                <span class="th" id="v-th">PASS</span>
+                <span class="t"><b id="v-title">Amma · Passport</b><span id="v-sub">Expires Apr 2031</span></span>
+                <span class="send"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z"/></svg><span>Send</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="card reveal" style="--delay:.05s">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></div>
             <h3>Send on WhatsApp</h3>
-            <p>The visa office wants a copy? Two taps and it's on its way, from the document itself.</p>
+            <p>Pick the side you need, tap send. Nothing leaves without your tap.</p>
           </div>
-          <div class="card">
+          <div class="card reveal" style="--delay:.1s">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg></div>
             <h3>Works offline</h3>
-            <p>Documents you've opened stay on the phone, encrypted. Changes made offline wait safely and go out when you're back.</p>
+            <p>Opened documents stay on the phone, encrypted. Offline changes wait, still locked.</p>
           </div>
-          <div class="card">
+          <div class="card reveal" style="--delay:.05s">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2.5"/><path d="M8 10h3M8 14h8M14 10h2"/></svg></div>
+            <h3>Records too</h3>
+            <p>Bank details, Wi-Fi, policy numbers. Hidden values stay masked until you tap.</p>
+          </div>
+          <div class="card reveal" style="--delay:.1s">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 13h12l1-13M9 7V4h6v3"/></svg></div>
             <h3>Nothing lost by accident</h3>
-            <p>Deleted documents wait in the Trash for 30 days. Exact duplicates are caught before they're saved.</p>
+            <p>A 30-day Trash, and exact duplicates caught before they're saved.</p>
+          </div>
+          <div class="card wide reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>App lock and private screens</h3>
+            <p>Ask for your fingerprint or screen lock when Sandooq opens. Recovery keys and secret values can't be screenshotted, and copied secrets clear themselves.</p>
+          </div>
+          <div class="card wide reveal" style="--delay:.06s">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="M20.2 18.2L22 20"/></svg></div>
+            <h3>Sorted by person, automatically</h3>
+            <p>Each vault opens with a folder for everyone in the family: Amma, Appa, the kids. Files of one card, front and back, stay together.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="block" id="how">
-        <h2>We can't read your documents.</h2>
-        <p class="section-sub">Every vault has its own key, made on the phone that created it. Documents are encrypted before they leave your phone, and the key is shared only with the members of that vault. Our servers store locked boxes they have no key for.</p>
-        <div class="split">
-          <div class="list-card cant">
-            <h3><span class="dot"></span>Our servers can't see</h3>
-            <ul>
-              <li>Your files and scans</li>
-              <li>Document names, types and numbers</li>
-              <li>Whose document it is, expiry dates, the text read from it</li>
-              <li>Vault names</li>
-              <li>Any key that could open them</li>
-            </ul>
-          </div>
-          <div class="list-card can">
-            <h3><span class="dot"></span>Our servers can see</h3>
-            <ul>
-              <li>Your Google email and name</li>
-              <li>Which vaults you're in, and your role</li>
-              <li>How many items there are, their sizes and when they changed</li>
-              <li>Who added or changed an item (by account, not what changed)</li>
-            </ul>
-          </div>
-        </div>
-        <p class="section-sub" style="margin-top:20px">Lose your phone? Your recovery key, your phone's own backup, or another member of the vault can bring your access back. The full details are in the <a href="privacy/">privacy policy</a>.</p>
-      </section>
+    <!-- Family and keys -->
+    <section class="sec">
+      <div class="wrap family">
+        <div class="reveal">
+          <svg class="keys-svg" id="keys" viewBox="0 0 560 410" role="img" aria-label="The vault key travels, sealed, to each member's phone: Ahil the owner, Fatima an admin, Ravi an editor and Amma a viewer.">
+            <path class="line" id="k1" d="M280 205 L100 82"/>
+            <path class="line" id="k2" d="M280 205 L460 82"/>
+            <path class="line" id="k3" d="M280 205 L100 318"/>
+            <path class="line" id="k4" d="M280 205 L460 318"/>
+            <rect class="vault-b" x="218" y="155" width="124" height="100" rx="24"/>
+            <use href="#q" x="263" y="168" width="34" height="47" style="--q-mark:#2FB3A4;--q-hole:#13302D"/>
+            <text class="vault-l" x="280" y="240">FAMILY</text>
 
-      <section class="block">
-        <h2>In your language.</h2>
-        <p class="section-sub">The whole app, and voice search, speak six languages.</p>
-        <div class="langs" lang="mul">
-          <span>English</span><span lang="ml">മലയാളം</span><span lang="ta">தமிழ்</span><span lang="hi">हिन्दी</span><span lang="kn">ಕನ್ನಡ</span><span lang="ar" dir="rtl">العربية</span>
+            <g class="pkt"><circle r="12"/><path d="M-4.5 0v-2.5a4.5 4.5 0 0 1 9 0V0M-6 0h12v7h-12z"/><animateMotion dur="3.2s" repeatCount="indefinite" begin="0s"><mpath href="#k1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="3.2s" repeatCount="indefinite" begin="0s"/></g>
+            <g class="pkt"><circle r="12"/><path d="M-4.5 0v-2.5a4.5 4.5 0 0 1 9 0V0M-6 0h12v7h-12z"/><animateMotion dur="3.2s" repeatCount="indefinite" begin=".8s"><mpath href="#k2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="3.2s" repeatCount="indefinite" begin=".8s"/></g>
+            <g class="pkt"><circle r="12"/><path d="M-4.5 0v-2.5a4.5 4.5 0 0 1 9 0V0M-6 0h12v7h-12z"/><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.6s"><mpath href="#k3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="3.2s" repeatCount="indefinite" begin="1.6s"/></g>
+            <g class="pkt"><circle r="12"/><path d="M-4.5 0v-2.5a4.5 4.5 0 0 1 9 0V0M-6 0h12v7h-12z"/><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.4s"><mpath href="#k4"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="3.2s" repeatCount="indefinite" begin="2.4s"/></g>
+
+            <g transform="translate(100 82)"><circle r="31" fill="#0E6E66"/><text class="av">A</text><text class="nm" y="52">Ahil</text><rect x="-34" y="60" width="68" height="20" rx="10" fill="#E1F2EF"/><text class="rl" y="74" fill="#0E6E66">OWNER</text></g>
+            <g transform="translate(460 82)"><circle r="31" fill="#A86F0E"/><text class="av">F</text><text class="nm" y="52">Fatima</text><rect x="-34" y="60" width="68" height="20" rx="10" fill="#FBF1DC"/><text class="rl" y="74" fill="#A86F0E">ADMIN</text></g>
+            <g transform="translate(100 318)"><circle r="31" fill="#3D6FB6"/><text class="av">R</text><text class="nm" y="52">Ravi</text><rect x="-34" y="60" width="68" height="20" rx="10" fill="#E3ECF8"/><text class="rl" y="74" fill="#3D6FB6">EDITOR</text></g>
+            <g transform="translate(460 318)"><circle r="31" fill="#1D7A3A"/><text class="av">M</text><text class="nm" y="52">Amma</text><rect x="-34" y="60" width="68" height="20" rx="10" fill="#E2F3E7"/><text class="rl" y="74" fill="#1D7A3A">VIEWER</text></g>
+          </svg>
         </div>
-      </section>
-    </div>
+        <div>
+          <span class="kicker reveal">Shared, on your terms</span>
+          <h2 class="reveal">One vault for the family. One key, sealed to each phone.</h2>
+          <p class="sub reveal" style="margin-bottom:22px">Invite people with a QR code or a WhatsApp message. An invite only asks to join: someone who already holds the key lets them in, after checking their security code.</p>
+          <ul class="roles reveal">
+            <li><b>Owner</b>Everything, including who's in the vault.</li>
+            <li><b>Admin</b>Lets people in, changes roles, deletes and restores.</li>
+            <li><b>Editor</b>Adds documents and edits any of them.</li>
+            <li><b>Viewer</b>Views and sends. Perfect for parents.</li>
+          </ul>
+          <p class="sub reveal" style="margin:18px 0 0;font-size:16px">Remove someone, and the vault gets a brand-new key that they never receive.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lost phone -->
+    <section class="sec">
+      <div class="wrap">
+        <span class="kicker reveal">If you lose your phone</span>
+        <h2 class="reveal">Three ways back in. None of them through us.</h2>
+        <p class="sub reveal">Because we never hold your keys, getting back in on a new phone works through things only you and your family have.</p>
+        <div class="lost">
+          <div class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></div>
+            <h3>Your recovery key</h3>
+            <p>Given once when you set up. Write it down; we never see it.</p>
+            <div class="rk" aria-hidden="true"><span>K7QM-4XWP-9DTR-2HVN</span></div>
+          </div>
+          <div class="card reveal" style="--delay:.08s">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 18a5 5 0 0 1-.5-10 6 6 0 0 1 11.5 2 4 4 0 0 1 0 8z"/><rect x="9.5" y="12" width="5" height="4" rx="1"/><path d="M10.5 12v-1a1.5 1.5 0 0 1 3 0v1"/></svg></div>
+            <h3>Your phone's own backup</h3>
+            <p>Android keeps a copy of your key that only your phone's screen lock can open, and brings it back on a new phone.</p>
+          </div>
+          <div class="card reveal" style="--delay:.16s">
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 11l2 2 4-4"/></svg></div>
+            <h3>Someone in your vault</h3>
+            <p>Any member can give you access again, after a clear "security code changed" warning, so a stolen Google account alone isn't enough.</p>
+          </div>
+        </div>
+        <div class="note lost-note reveal"><p>With none of the three, a vault only you were in can't be opened by anyone, including us. That's what end-to-end encryption means, and the app says so plainly.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sec">
+      <div class="wrap">
+        <span class="kicker reveal">Questions</span>
+        <h2 class="reveal">The honest answers.</h2>
+        <div class="faq reveal">
+          <details><summary>Can Sandooq read my documents?</summary><p>No. Files, titles, numbers, the text read from them and vault names are encrypted on your phone with keys our servers never hold. We can see your Google email and name, which vaults you're in, and counts, sizes and times. The <a href="privacy/">privacy policy</a> lists everything.</p></details>
+          <details><summary>Is my document text sent to an AI?</summary><p>No. Text recognition runs on your phone. The optional on-device model is downloaded once over Wi-Fi and runs on the phone too; nothing you scan is sent to a cloud reading or AI service.</p></details>
+          <details><summary>Who can see what I add?</summary><p>Only the members of the vault you add it to, because only their phones hold that vault's key. Each member's role decides whether they can add, edit or delete.</p></details>
+          <details><summary>What happens if I lose my phone?</summary><p>Sign in on the new phone and get your keys back with your recovery key, your phone's backup, or a family member in the vault giving you access again.</p></details>
+          <details><summary>Where is my data stored?</summary><p>Our database is in Mumbai, India. Encrypted files and encrypted backups are kept with Cloudflare in the Asia-Pacific region.</p></details>
+          <details><summary>Is it free?</summary><p>Yes, for now. If paid plans come, joining someone else's vault will stay free, and nothing you've stored is ever deleted or locked if you stop paying.</p></details>
+          <details><summary>Is there an iPhone app?</summary><p>Sandooq is coming to Android first. iPhone is planned.</p></details>
+          <details><summary>How do I delete my account?</summary><p>In the app: Profile → Delete account. Or follow the steps on the <a href="delete-account/">account deletion page</a>.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band -->
+    <section class="band">
+      <div class="wrap">
+        <div class="band-in reveal">
+          <div>
+            <h2>Every document, one safe place.</h2>
+            <p>Sandooq is coming soon to Google Play. Android first, iPhone later.</p>
+            <div class="cta-row">
+              <a class="btn" href="#how">How it works</a>
+              <a class="btn ghost" href="privacy/">Read the privacy policy</a>
+            </div>
+          </div>
+          <svg class="q-big" aria-hidden="true"><use href="#q"/></svg>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -142,5 +354,7 @@
       </nav>
     </div>
   </footer>
+
+  <script src="home.js" defer></script>
 </body>
 </html>

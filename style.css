@@ -228,7 +228,8 @@ td:first-child { font-weight: 600; min-width: 150px; }
   .grid, .split { grid-template-columns: 1fr; }
   .toc ol { columns: 1; }
   .site-header .wrap { padding-top: 8px; padding-bottom: 8px; }
-  .site-header nav { margin-left: -12px; }
+  .site-header nav { margin-left: -10px; gap: 0; }
+  .site-header nav a { font-size: 14px; padding: 7px 10px; }
   .wordmark { font-size: 26px; }
   td:first-child { min-width: 110px; }
   .mail-card dl { grid-template-columns: 1fr; gap: 2px; }
